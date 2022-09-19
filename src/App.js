@@ -13,6 +13,7 @@ function reducer(todos, action) {
       return [...todos, newTodo(action.payload.name)];
     case ACTIONS.TOGGLE_TODO:
       return todos.map((todo) => {
+        console.log(action.payload.id);
         if (todo.id === action.payload.id) {
           return { ...todo, complate: !todo.complate };
         }

@@ -1,23 +1,21 @@
 import React from "react";
-import ACTIONS from "./App.js";
+import { ACTIONS } from "./App.js";
 
 const Todo = ({ todo, dispatch }) => {
+  console.log(todo.id);
   return (
     <div>
-      {console.log(todo.id)}
-      <span style={{ color: todo.complate ? "#AAA" : "#000" }}>
-        {todo.name}
-      </span>
+      <span style={{ color: todo.complate ? "red" : "#000" }}>{todo.name}</span>
       <button
         onClick={() =>
-          dispatch({ type: ACTIONS.TOGGLE_TODO, peyload: { id: todo.id } })
+          dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
         }
       >
         Toggle
       </button>
       <button
         onClick={() =>
-          dispatch({ type: ACTIONS.DELETE_TODO, peyload: { id: todo.id } })
+          dispatch({ type: ACTIONS.DELETE_TODO, payload: { id: todo.id } })
         }
       >
         Delete
